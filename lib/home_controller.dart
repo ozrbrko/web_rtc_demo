@@ -1,9 +1,11 @@
+// lib/home_controller.dart
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:get/get.dart';
 import 'package:web_rtc_demo/room_page.dart';
 import 'package:web_rtc_demo/signaling.dart';
+import 'package:web_rtc_demo/home_page.dart';
 
 class HomeController extends GetxController {
   Signaling signaling = Signaling();
@@ -37,7 +39,7 @@ class HomeController extends GetxController {
   Future<void> createRoom() async {
     await signaling.openUserMedia(localRenderer, remoteRenderer);
     roomId.value = await signaling.createRoom(remoteRenderer) ?? '';
-    textEditingController.text = roomId.value;
+    // textEditingController.text = roomId.value;
   }
 
   Future<bool> validateRoomId(String roomId) async {
@@ -63,5 +65,6 @@ class HomeController extends GetxController {
 
   void hangUp() {
     signaling.hangUp(localRenderer);
+    Get.offAll(() => HomePage());
   }
 }

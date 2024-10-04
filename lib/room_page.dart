@@ -1,3 +1,4 @@
+// lib/room_page.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:get/get.dart';
@@ -213,6 +214,28 @@ class RoomPage extends StatelessWidget {
               ),
             ),
           ),
+          // Hangup button
+          Positioned(
+            bottom: 20,
+            left: MediaQuery.of(context).size.width / 2 - 32, // Konumunu yeniden ayarlamak gerekebilir
+            child: SizedBox(
+              width: 65, // Butonun genişliği
+              height: 65, // Butonun yüksekliği
+              child: FloatingActionButton(
+                onPressed: () {
+                  controller.hangUp();
+                },
+                backgroundColor: Colors.red,
+                shape: const CircleBorder(),
+                child: const Icon(
+                  Icons.call_end,
+                  color: Colors.white,
+                  size: 25, // İkonun boyutunu da büyütmek için
+                ),
+              ),
+            ),
+          ),
+
         ],
       ),
     );
