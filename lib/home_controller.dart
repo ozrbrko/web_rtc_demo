@@ -1,12 +1,10 @@
-// lib/home_controller.dart
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:faconnection/home_page.dart';
+import 'package:faconnection/room_page.dart';
+import 'package:faconnection/signaling.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:get/get.dart';
-import 'package:web_rtc_demo/room_page.dart';
-import 'package:web_rtc_demo/signaling.dart';
-import 'package:web_rtc_demo/home_page.dart';
 
 class HomeController extends GetxController {
   Signaling signaling = Signaling();

@@ -1,8 +1,9 @@
+import 'package:faconnection/asset_strings/images.dart';
+import 'package:faconnection/home_controller.dart';
+import 'package:faconnection/room_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:web_rtc_demo/home_controller.dart';
-import 'package:web_rtc_demo/asset_strings/images.dart';
-import 'package:web_rtc_demo/room_page.dart';
+
 
 class HomePage extends StatelessWidget {
   final HomeController controller = Get.put(HomeController());
@@ -11,7 +12,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(MyImages.homeBack),
             fit: BoxFit.cover,
@@ -23,10 +24,10 @@ class HomePage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(height: 100),
+                  const SizedBox(height: 100),
                   Image.asset(MyImages.app_logo, width: 300, height: 100),
-                  SizedBox(height: 100),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 100),
+                  const SizedBox(height: 20),
                   // TextFormField with border radius
                   TextFormField(
                     controller: controller.textEditingController,
@@ -37,25 +38,25 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Join Room Button
                   ElevatedButton(
                     onPressed: () {
                       controller.joinRoom();
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+                      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Join Room',
                       style: TextStyle(fontSize: 18),
                     ),
                   ),
               
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
               
                   ElevatedButton(
                     onPressed: () async {
@@ -63,12 +64,12 @@ class HomePage extends StatelessWidget {
                       Get.to(() => RoomPage(action: 'create'));
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+                      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Create Room',
                       style: TextStyle(fontSize: 18),
                     ),
