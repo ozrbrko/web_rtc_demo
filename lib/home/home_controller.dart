@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:faconnection/home_page.dart';
-import 'package:faconnection/room_page.dart';
-import 'package:faconnection/signaling.dart';
+import 'package:faconnection/home/home_page.dart';
+import 'package:faconnection/rooms/room_page.dart';
+import 'package:faconnection/signal/signaling.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:get/get.dart';
