@@ -1,6 +1,7 @@
 // lib/home_controller.dart
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:get/get.dart';
 import 'package:web_rtc_demo/room_page.dart';
@@ -59,7 +60,7 @@ class HomeController extends GetxController {
       signaling.joinRoom(roomId, remoteRenderer);
       Get.to(() => RoomPage(action: 'join'));
     } else {
-      Get.snackbar('Error', 'Invalid Room ID');
+      Get.snackbar('Error', 'Invalid Room ID',backgroundColor:  Colors.white);
     }
   }
 
